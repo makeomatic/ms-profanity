@@ -14,11 +14,10 @@
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
-    "codecov": "^1.0.1",
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.6.1",
     "eslint-config-airbnb-base": "^8.0.0",
-    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-mocha": "^4.5.1",
     "isparta": "^4.0.0",
