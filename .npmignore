@@ -1,0 +1,7 @@
+coverage
+test
+.eslintignore
+.eslintrc
+.instanbul.yml
+Makefile
+update.js
