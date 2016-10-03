@@ -43,7 +43,6 @@ const grawlixCache = Array
   }, {});
 
 function replacer(word) {
-  console.log(arguments)
   const wordLenght = word.length;
   const cached = grawlixCache[wordLenght];
 
