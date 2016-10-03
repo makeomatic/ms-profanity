@@ -1,0 +1,41 @@
+{
+  "name": "ms-profanity",
+  "description": "Profanity filter using Shutterstock dictionary",
+  "main": "./lib/index.js",
+  "scripts": {
+    "lint": "eslint . --ext .json --ext .js",
+    "prepublish": "npm run lint",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "babel-node ./node_modules/.bin/isparta cover --report html node_modules/mocha/bin/_mocha",
+    "update": "node update.js"
+  },
+  "dependencies": {
+    "common-errors": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "cz-conventional-changelog": "^1.2.0",
+    "eslint": "^3.6.1",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-mocha": "^4.5.1",
+    "isparta": "^4.0.0",
+    "istanbul": "=0.4.4",
+    "mocha": "^3.1.0",
+    "semantic-release": "^4.3.5"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makeomatic/ms-profanity.git"
+  },
+  "release": {
+    "verifyConditions": []
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
