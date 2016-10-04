@@ -6,7 +6,7 @@
     "lint": "eslint . --ext .json --ext .js",
     "prepublish": "npm run lint",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "babel-node ./node_modules/.bin/isparta cover --report html node_modules/mocha/bin/_mocha",
+    "test": "npm run lint && babel-node ./node_modules/.bin/isparta cover --report html node_modules/mocha/bin/_mocha",
     "update": "node update.js"
   },
   "dependencies": {
