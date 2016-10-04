@@ -1,9 +1,10 @@
 const Errors = require('common-errors');
 const fs = require('fs');
+const path = require('path');
 const Profanity = require('./profanity');
 
 const locales = fs
-  .readdirSync('dictionary')
+  .readdirSync(path.resolve(__dirname, '../dictionary'))
   .map(file => file.replace('.json', ''));
 const profanities = new Map();
 
