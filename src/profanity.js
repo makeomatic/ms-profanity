@@ -1,43 +1,31 @@
 const grawlixChars = ['!', '@', '#', '$', '%', '~', '*'];
+const shuffle = require('lodash/shuffle');
 
-function getChar() {
-  const length = grawlixChars.length;
-  const position = Math.floor(Math.random() * length);
-
-  return grawlixChars[position];
-}
-
-function makeGrawlix(wordLenght) {
-  const grawlixLength = grawlixChars.length;
+function makeGrawlix(wordLenght, chars) {
+  const charsLength = chars.length;
   let position = 0;
   let newString = '';
 
   for (let i = 0; i < wordLenght; i += 1) {
-    if (position >= grawlixLength) {
+    if (position >= charsLength) {
       position = 0;
     }
 
-    newString += grawlixChars[position];
+    newString += chars[position];
     position += 1;
   }
 
   return newString;
 }
 
-function makeRandomGrawlix(wordLenght) {
-  let newString = '';
-
-  for (let i = 0; i < wordLenght; i += 1) {
-    newString += getChar();
-  }
-
-  return newString;
+function makeRandomGrawlix(wordLenght, chars) {
+  return makeGrawlix(wordLenght, shuffle(chars));
 }
 
 const grawlixCache = Array
   .from(Array(20).keys())
   .reduce((cache, length) => {
-    cache[length] = makeRandomGrawlix(length);
+    cache[length] = makeRandomGrawlix(length, grawlixChars);
 
     return cache;
   }, {});
@@ -50,7 +38,7 @@ function replacer(word) {
     return cached;
   }
 
-  return makeGrawlix(word.length);
+  return makeGrawlix(word.length, grawlixChars);
 }
 
 function reducer(text, word) {
